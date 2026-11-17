@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #171217;
+    background: #fff7fb;
+}
+
+/* Header */
+
+.topbar {
+    min-height: 76px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #050508;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font: bold 29px Georgia, serif;
+    white-space: nowrap;
+}
+
+.brand-pink, .lotus {
+    color: #ff5da7;
+}
+
+.lotus {
+    font-size: 35px;
+    margin-right: 7px;
+}
+
+.navigation {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #49434a;
+    border-radius: 9px;
+    min-width: 105px;
+    text-align: center;
+    padding: 12px 17px;
+    font-weight: 600;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #ff68ad;
+    border-color: #f04491;
+}
+
+.menu-check, .menu-icon {
+    display: none;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+
+    background:
+        radial-gradient(ellipse at 18% 45%,
+        #1765b6 0%, #082b60 29%, transparent 55%),
+        radial-gradient(ellipse at 82% 20%,
+        #142f62, transparent 45%),
+        linear-gradient(110deg,
+        #05060d, #07172f 55%, #03050b);
+}
+
+.hero::before {
+    content: "✦   ✧       ✦      ✧";
+    position: absolute;
+    inset: 25px 5%;
+    color: #5bb8ff;
+    opacity: .35;
+    font-size: 42px;
+    letter-spacing: 55px;
+}
+
+.hero-content {
+    position: relative;
+    padding: 40px 20px;
+    text-shadow: 0 3px 14px #000;
+}
+
+.welcome {
+    font: bold clamp(38px, 5vw, 62px) Georgia, serif;
+}
+
+.hero h1 {
+    font: bold clamp(42px, 6vw, 72px) Georgia, serif;
+}
+
+.hero h1 span {
+    color: #70c7ff;
+}
+
+.tagline {
+    margin: 14px 0 27px;
+    font: italic 25px Georgia, serif;
+}
+
+.shop-button, .cart-button {
+    display: inline-block;
+    background: #f04491;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.shop-button:hover, .cart-button:hover {
+    background: #c72c72;
+}
+
+/* Products Section */
+
+.products-section {
+    padding: 20px 6% 35px;
+    background: linear-gradient(120deg, #fff, #fff0f7);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-flower {
+    color: #f04491;
+    font-size: 29px;
+}
+
+.section-title h2 {
+    font: bold 36px Georgia, serif;
+}
+
+.section-title h2 span {
+    color: #f04491;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    text-align: center;
+    border: 1px solid #f1e4eb;
+    border-radius: 15px;
+    padding: 14px 12px;
+    box-shadow: 0 4px 14px rgba(40,10,30,.09);
+}
+
+.product-art {
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(#fff, #fff8fb);
+    margin-bottom: 8px;
+}
+
+/* Face Cream */
+
+.cream-lid {
+    width: 82px;
+    height: 18px;
+    position: absolute;
+    top: 20px;
+    border-radius: 7px;
+    background: linear-gradient(#ff9dcb, #ed4f9b);
+}
+
+.cream-jar {
+    width: 88px;
+    height: 55px;
+    margin-top: 27px;
+    border-radius: 8px 8px 17px 17px;
+    background: linear-gradient(90deg,#fff,#ffd8e9,#fff);
+    border: 1px solid #efc4d8;
+    color: #bf5a89;
+    font: 10px Georgia,serif;
+    display: grid;
+    place-content: center;
+}
+
+/* Face Toner */
+
+.toner-cap {
+    position: absolute;
+    top: 10px;
+    width: 17px;
+    height: 23px;
+    background: linear-gradient(90deg,#bd8a42,#fff0c2,#bd8a42);
+}
+
+.toner-bottle {
+    margin-top: 30px;
+    width: 55px;
+    height: 75px;
+    border-radius: 9px 9px 14px 14px;
+    border: 1px solid #edbfd5;
+    background: linear-gradient(90deg,#f8c3dc,#fff,#f6a9cd);
+    color: #bd5689;
+    font: 10px Georgia,serif;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+/* Face Wash */
+
+.wash-tube {
+    width: 58px;
+    height: 85px;
+    clip-path: polygon(12% 0,88% 0,78% 90%,22% 90%);
+    background: linear-gradient(90deg,#ee69a8,#ffc2df,#e84b96);
+    color: white;
+    font: 10px Georgia,serif;
+    display: grid;
+    place-content: center;
+}
+
+.wash-cap {
+    position: absolute;
+    bottom: 7px;
+    width: 26px;
+    height: 10px;
+    background: #d94387;
+}
+
+/* Perfume */
+
+.perfume-cap {
+    position: absolute;
+    top: 12px;
+    width: 24px;
+    height: 19px;
+    background: linear-gradient(90deg,#b88c50,#fff0bd,#a5793e);
+}
+
+.perfume-bottle {
+    margin-top: 29px;
+    width: 65px;
+    height: 66px;
+    border: 2px solid #e6a7c6;
+    border-radius: 10px 10px 17px 17px;
+    background: linear-gradient(90deg,#f5a7ca,#fff,#f18db8);
+    display: grid;
+    place-content: center;
+    color: #a44372;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 3px 0;
+}
+
+.product-card p {
+    font-size: 13px;
+}
+
+.product-card strong {
+    display: block;
+    color: #f04491;
+    font-size: 21px;
+    margin: 3px 0 8px;
+}
+
+.cart-button {
+    padding: 7px 22px;
+}
+
+/* About and Services */
+
+.about-section, .services-section {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+}
+
+.about-section h2, .services-section h2 {
+    font: bold 25px Georgia, serif;
+    color: #4c1834;
+    margin-bottom: 7px;
+}
+
+.services-section {
+    background: #fff0f7;
+}
+
+/* Footer */
+
+.footer {
+    display: grid;
+    grid-template-columns: 1.3fr .9fr 1.1fr .8fr;
+    gap: 25px;
+    align-items: center;
+    padding: 24px 6% 0;
+    background: #09090b;
+    color: white;
+}
+
+.footer-brand, .footer-column, .social-links {
+    min-height: 88px;
+    border-right: 1px solid #aaa;
+}
+
+.footer-brand em {
+    display: block;
+    margin: 4px 0 0 55px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-left: 12px;
+}
+
+.footer-column h3 {
+    margin-bottom: 5px;
+}
+
+.footer-column a, .footer-column p {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-links {
+    border: 0;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.social-links a {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 2px solid #f04491;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    margin: 0 -6.8%;
+    text-align: center;
+    padding: 12px;
+    color: #311326;
+    background: linear-gradient(90deg,#e75c98,#ff9bc8);
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+    .topbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-icon {
+        display: block;
+        color: white;
+        cursor: pointer;
+        border: 1px solid #777;
+        border-radius: 7px;
+        padding: 7px 12px;
+        font-size: 22px;
+    }
+
+    .navigation {
+        display: none;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        flex: 1 1 28%;
+    }
+
+    .menu-check:checked ~ .navigation {
+        display: flex;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand, .footer-column {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .brand {
+        font-size: 24px;
+    }
+
+    .hero {
+        min-height: 330px;
+    }
+
+    .tagline {
+        font-size: 19px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 10px 6px;
+    }
+
+    .product-card h3 {
+        font-size: 15px;
+    }
+
+    .product-card p {
+        font-size: 11px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand em {
+        margin-left: 0;
+    }
+
+    .footer-column {
+        align-items: center;
+        padding: 0;
+    }
+
+    .social-links {
+        min-height: auto;
+    }
+
+    .copyright {
+        margin: 0 -7%;
+    }
+}
